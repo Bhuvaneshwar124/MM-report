@@ -1,0 +1,99 @@
+Pradeep/Documents/Downloads/Project 12/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor-Mentee Report</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mailam Engineering College</h1>
+            <h2>Department of Computer Science & Business Systems</h2>
+        </header>
+        
+        <h3>Mentor-Mentee Report</h3>
+
+        <div class="search-container">
+            <input type="text" 
+                   id="searchInput" 
+                   placeholder="Search students..."
+                   class="search-input">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Phone No</th>
+                    <th>Date of Birth</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample student data
+        const students = [
+            { id: 1, name: "John Doe", phone: "1234567890", dob: "01/01/2000" },
+            { id: 2, name: "Jane Smith", phone: "0987654321", dob: "02/02/2001" },
+            { id: 3, name: "Alice Johnson", phone: "5555555555", dob: "03/03/2000" }
+        ];
+
+        function viewDetails(id) {
+            const student = students.find(s => s.id === id);
+            if (student) {
+                const button = event.target;
+                button.innerHTML = '<span style="opacity: 0.7">Loading...</span>';
+                button.disabled = true;
+
+                setTimeout(() => {
+                    window.location.href = `student-details.html?id=${id}`;
+                }, 300);
+            }
+        }
+
+        function populateTable(data = students) {
+            const tableBody = document.getElementById('studentTable');
+            tableBody.innerHTML = data.map(student => `
+                <tr>
+                    <td>${student.id}</td>
+                    <td>${student.name}</td>
+                    <td>${student.phone}</td>
+                    <td>${student.dob}</td>
+                    <td>
+                        <button onclick="viewDetails(${student.id})">
+                            View Details
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function initializeSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredStudents = students.filter(student => 
+                    student.name.toLowerCase().includes(searchTerm) ||
+                    student.phone.includes(searchTerm) ||
+                    student.dob.includes(searchTerm)
+                );
+                populateTable(filteredStudents);
+            });
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            populateTable();
+            initializeSearch();
+        });
+    </script>
+</body>
+</html>

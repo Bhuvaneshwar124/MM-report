@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor-Mentee Portal | Mailam Engineering College</title>
+    <link rel="stylesheet" href="front.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/navigation.js"></script>
+    <script src="js/dataManager.js"></script>
+</head>
+<body>
+    <div class="header animate__animated animate__fadeIn">
+        <div class="college-logo">
+           
+        </div>
+        <div class="college-info">
+            <h1>MAILAM ENGINEERING COLLEGE</h1>
+            <p>Approved by AICTE, New Delhi | Affiliated to Anna University Chennai</p>
+            <p>Accredited by NBA, TCS & NAAC - 'A' Grade</p>
+            <h2>Department of Computer Science & Business Systems</h2>
+        </div>
+    </div>
+
+    <div class="container animate__animated animate__fadeInUp">
+        <nav class="nav-menu">
+            <a href="front.html">Overview</a>
+            <a href="index.html">Mentee Form</a>
+            <a href="final.html">Follow-up</a>
+            <a href="list.html">Student List</a>
+        </nav>
+
+        <div class="content-wrapper">
+            <div class="mentee-card">
+                <h2>Quick Access Portal</h2>
+                <div class="search-box">
+                    <input type="text" placeholder="Search by Register Number..." id="searchInput">
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-box">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Students</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Mentors</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Semesters</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-item mentee-details">
+                    <div class="section-header">
+                        <h3>Recent Mentees</h3>
+                        <button class="add-btn" onclick="openModal('menteeModal')">+ Add New Mentee</button>
+                    </div>
+                    <div class="mentee-list" id="menteeList">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="grid-item mentor-section">
+                    <div class="section-header">
+                        <h3>Active Mentors</h3>
+                        <button class="add-btn" onclick="openModal('mentorModal')">+ Add New Mentor</button>
+                    </div>
+                    <div class="mentor-grid">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mentee Modal -->
+    <div id="menteeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('menteeModal')">&times;</span>
+            <h2>Add New Mentee</h2>
+            <form id="menteeForm">
+                <div class="form-group">
+                    <label for="menteeName">Full Name</label>
+                    <input type="text" id="menteeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="menteeRegNo">Register Number</label>
+                    <input type="text" id="menteeRegNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="menteeSemester">Semester</label>
+                    <select id="menteeSemester" required>
+                        <option value="">Select Semester</option>
+                        <option value="1">1st Semester</option>
+                        <option value="2">2nd Semester</option>
+                        <option value="3">3rd Semester</option>
+                        <option value="4">4th Semester</option>
+                        <option value="5">5th Semester</option>
+                        <option value="6">6th Semester</option>
+                        <option value="7">7th Semester</option>
+                        <option value="8">8th Semester</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Add Mentee</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mentor Modal -->
+    <div id="mentorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('mentorModal')">&times;</span>
+            <h2>Add New Mentor</h2>
+            <form id="mentorForm">
+                <div class="form-group">
+                    <label for="mentorName">Full Name</label>
+                    <input type="text" id="mentorName" required>
+                </div>
+                <div class="form-group">
+                    <label for="mentorDepartment">Department</label>
+                    <input type="text" id="mentorDepartment" value="CSBS" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="mentorDesignation">Designation</label>
+                    <select id="mentorDesignation" required>
+                        <option value="">Select Designation</option>
+                        <option value="professor">Professor</option>
+                        <option value="associate">Associate Professor</option>
+                        <option value="assistant">Assistant Professor</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Add Mentor</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <p>Mailam Engineering College</p>
+                <p>Mailam, Villupuram - 604 304</p>
+                <p>Tamil Nadu, India</p>
+            </div>
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Academic Calendar</a>
+                <a href="#">Resources</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize navigation
+            NavigationManager.init();
+
+            // Load data from DataManager
+            const mentees = Object.values(DataManager.getMenteeData());
+            const mentors = Object.values(DataManager.getMentorData());
+
+            // Populate mentee list
+            const menteeList = document.getElementById('menteeList');
+            mentees.forEach(mentee => {
+                const menteeCard = document.createElement('div');
+                menteeCard.className = 'mentee-card-item';
+                menteeCard.innerHTML = `
+                    <h4>${mentee.name}</h4>
+                    <p>Reg No: ${mentee.registerNumber}</p>
+                    <p>Semester: ${mentee.semester}</p>
+                `;
+                menteeCard.addEventListener('click', () => {
+                    NavigationManager.goToMenteeDetails(mentee.registerNumber);
+                });
+                menteeList.appendChild(menteeCard);
+            });
+
+            // Add form submission handlers
+            document.getElementById('menteeForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData);
+                DataManager.saveMenteeData(data);
+                closeModal('menteeModal');
+                location.reload();
+            });
+
+            document.getElementById('mentorForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData);
+                DataManager.saveMentorData(data);
+                closeModal('mentorModal');
+                location.reload();
+            });
+        });
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

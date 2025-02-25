@@ -1,0 +1,244 @@
+:root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --accent-color: #3498db;
+    --hover-color: #f8f9fa;
+    --border-color: #e0e5ec;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+    min-height: 100vh;
+    color: var(--text-primary);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 25px;
+    background: var(--gradient);
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+    pointer-events: none;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+h3 {
+    text-align: center;
+    margin: 30px 0;
+    color: var(--primary-color);
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--gradient);
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+tr {
+    transition: all 0.3s ease;
+    background: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafc;
+}
+
+tr:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.01);
+}
+
+button {
+    padding: 10px 20px;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    th, td {
+        padding: 12px;
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .search-input {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    table {
+        margin-top: 15px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .container {
+        box-shadow: none;
+        width: 100%;
+    }
+
+    button {
+        display: none;
+    }
+
+    tr:hover {
+        transform: none;
+    }
+}
+
+/* Add these new styles at the end of your existing CSS file */
+
+.search-container {
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: var(--hover-color);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+    background-color: white;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Add loading animation for buttons */
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

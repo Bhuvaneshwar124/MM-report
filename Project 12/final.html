@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Follow-Up | Mailam Engineering College</title>
+    <link rel="stylesheet" href="styles3.css">
+    <script src="js/navigation.js"></script>
+    <script src="js/dataManager.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Mailam Engineering College</h1>
+        <h2>Department of Computer Science & Business Systems</h2>
+    </header>
+
+    <main>
+        <section class="mentee-follow-up">
+            <h3>Mentee Follow-Up Form</h3>
+            <form id="menteeForm">
+                <div class="form-group">
+                    <label for="mentorName">Mentor Name:</label>
+                    <input type="text" id="mentorName" name="mentorName" required placeholder="Enter mentor name">
+                </div>
+                <button type="button" id="saveSign">Save Signature</button>
+            </form>
+            
+            <div class="semesters-grid">
+                <div class="semester-card" data-semester="1">
+                    <div class="semester-header">
+                        <h4>Semester I</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="2">
+                    <div class="semester-header">
+                        <h4>Semester II</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="3">
+                    <div class="semester-header">
+                        <h4>Semester III</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="4">
+                    <div class="semester-header">
+                        <h4>Semester IV</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="5">
+                    <div class="semester-header">
+                        <h4>Semester V</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="6">
+                    <div class="semester-header">
+                        <h4>Semester VI</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="7">
+                    <div class="semester-header">
+                        <h4>Semester VII</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+                <div class="semester-card" data-semester="8">
+                    <div class="semester-header">
+                        <h4>Semester VIII</h4>
+                        <span class="semester-badge">Current</span>
+                    </div>
+                    <div class="semester-content">
+                        <table class="semester-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Discussion</th>
+                                    <th>Mentor</th>
+                                    <th>Sign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="date-input"></td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td>
+                                    <td class="signature-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="semester-actions">
+                        <button class="action-button add-row">Add Row</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="new.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function saveSignature() {
+                const signatureData = canvas.toDataURL('image/png');
+                // You can now use signatureData to save or display the signature
+                return signatureData;
+            }
+
+            document.getElementById('saveSign').addEventListener('click', () => {
+                const signature = saveSignature();
+                console.log('Signature saved:', signature);
+                // Here you can implement your save logic
+            });
+
+            // Get mentee ID from URL
+            const params = new URLSearchParams(window.location.search);
+            const menteeId = params.get('id');
+
+            if (menteeId) {
+                const menteeData = DataManager.getMenteeData()[menteeId];
+                if (menteeData) {
+                    // Populate form with mentee data
+                    document.getElementById('mentorName').value = menteeData.mentorName || '';
+                    // Load session data
+                    const sessions = DataManager.getSessionData()[menteeId] || {};
+                    for (const [semesterId, sessionData] of Object.entries(sessions)) {
+                        populateSemesterData(semesterId, sessionData);
+                    }
+                }
+            }
+
+            // Auto-save functionality
+            document.addEventListener('input', (e) => {
+                if (e.target.matches('[contenteditable="true"], .date-input')) {
+                    const semesterId = e.target.closest('.semester').dataset.semester;
+                    const sessionData = {
+                        date: e.target.value,
+                        discussion: e.target.textContent,
+                        mentor: document.getElementById('mentorName').value
+                    };
+                    DataManager.saveSessionData(menteeId, semesterId, sessionData);
+                }
+            });
+        });
+
+        function populateSemesterData(semesterId, sessionData) {
+            const semester = document.querySelector(`.semester[data-semester="${semesterId}"]`);
+            if (semester && sessionData.length) {
+                // Populate semester table with session data
+                const tbody = semester.querySelector('tbody');
+                tbody.innerHTML = sessionData.map(session => `
+                    <tr>
+                        <td>${session.date}</td>
+                        <td>${session.discussion}</td>
+                        <td>${session.mentor}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                `).join('');
+            }
+        }
+    </script>
+</body>
+</html>

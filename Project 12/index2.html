@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor-Mentee Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .college-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .college-info {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .department {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .report-title {
+            text-align: center;
+            color: #1e3c72;
+            font-size: 24px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        .section {
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .section:hover {
+            background-color: #f8f9fa;
+        }
+
+        .label {
+            font-weight: 600;
+            display: inline-block;
+            width: 250px;
+            color: #2a5298;
+        }
+
+        .content {
+            display: inline-block;
+            width: calc(100% - 270px);
+            padding: 8px;
+            border-bottom: 2px solid #e0e5ec;
+            color: #444;
+        }
+
+        .content:hover {
+            border-bottom-color: #1e3c72;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .label, .content {
+                display: block;
+                width: 100%;
+            }
+
+            .label {
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="college-name">MAILAM Engineering College</div>
+            <div class="college-info">Approved by AICTE, New Delhi, Affiliated to Anna University Chennai<br>
+                Accredited by NBA, TCS & NAAC - 'A' Grade</div>
+            <div class="department">DEPARTMENT OF COMPUTER SCIENCE & BUSINESS SYSTEMS</div>
+        </div>
+
+        <div class="report-title">MENTOR-MENTEE REPORT</div>
+
+    <div class="section">
+        <span class="label">NAME:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">ENROLLMENT NO:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">PROGRAMME:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">BRANCH:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">MOBILE NO:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">HOSTELLER/DAY SCHOLAR:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">QUOTA (Government/Management):</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">DATE OF BIRTH:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">RELIGION:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">GENDER:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">COMMUNITY:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">NAME OF FATHER:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">OCCUPATION AND ANNUAL INCOME:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">NAME OF MOTHER:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">MOBILE NUMBER (PARENT):</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div class="section">
+        <span class="label">ADDRESS:</span>
+        <span class="content">____________________________________</span>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="window.print()" style="
+            padding: 10px 20px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        ">Print Report</button>
+    </div>
+</body>
+</html>
